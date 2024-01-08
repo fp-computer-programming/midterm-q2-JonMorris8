@@ -3,13 +3,21 @@ Create a Python file named Midterm-Q2.py
 
 *** You must write a comment for every chunk of code you write from now on along with your author tag***
 
+
+
+
 """
+#author Jon Morris
+
 
 import random
 
 def choose_word():
     words = ["prep", "Mr O", "fairfield", "xavier", "berchman", "ignatious", "arrupe", "computer", "programming"]
     return random.choice(words)
+
+
+
 
 def display_word(word, guessed_letters):
     display = ""
@@ -25,8 +33,14 @@ def hangman():
     guessed_letters = []
     word_to_guess = choose_word()
 
+
+
+
     print("Welcome to Hangman!")
     print(display_word(word_to_guess, guessed_letters))
+
+
+
 
     attempts = 0
     while attempts < max_attempts:
@@ -39,6 +53,8 @@ def hangman():
         if guess in guessed_letters:
             print("You've already guessed that letter. Try again.")
             continue
+
+
 
         guessed_letters.append(guess)
 
@@ -55,8 +71,14 @@ def hangman():
             print("Congratulations! You guessed the word.")
             break
 
+
+
+
+
     if current_display != word_to_guess:
         print(f"Sorry, you're out of attempts. The word was {word_to_guess}.")
+
+
 
 if __name__ == "__main__":
     hangman()
